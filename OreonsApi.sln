@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OreonsApi", "OreonsApi\OreonsApi.csproj", "{0E324873-CE83-4F4C-8E94-DB91E862B2B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{F0E26A90-1F02-4DAD-B2D5-9358B22A732A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{72DB63FC-3487-4EEC-A507-E28C3C331142}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{246A866D-54F8-482A-B8C4-188206CD93C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OreonsApi.core", "OreonsApi.core\OreonsApi.core.csproj", "{C263533A-7AAC-4B03-975B-82D91320BCFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OreonsApi.mysqlprovider", "OreonsApi.mysqlprovider\OreonsApi.mysqlprovider.csproj", "{DD585318-13D8-4472-AF54-DC81023D6084}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E324873-CE83-4F4C-8E94-DB91E862B2B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E324873-CE83-4F4C-8E94-DB91E862B2B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E324873-CE83-4F4C-8E94-DB91E862B2B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E324873-CE83-4F4C-8E94-DB91E862B2B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C263533A-7AAC-4B03-975B-82D91320BCFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C263533A-7AAC-4B03-975B-82D91320BCFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C263533A-7AAC-4B03-975B-82D91320BCFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C263533A-7AAC-4B03-975B-82D91320BCFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD585318-13D8-4472-AF54-DC81023D6084}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD585318-13D8-4472-AF54-DC81023D6084}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD585318-13D8-4472-AF54-DC81023D6084}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD585318-13D8-4472-AF54-DC81023D6084}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E324873-CE83-4F4C-8E94-DB91E862B2B6} = {F0E26A90-1F02-4DAD-B2D5-9358B22A732A}
+		{C263533A-7AAC-4B03-975B-82D91320BCFF} = {72DB63FC-3487-4EEC-A507-E28C3C331142}
+		{DD585318-13D8-4472-AF54-DC81023D6084} = {246A866D-54F8-482A-B8C4-188206CD93C2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D606A58-297E-4CEF-80CF-E5979FBF5985}
+	EndGlobalSection
+EndGlobal
