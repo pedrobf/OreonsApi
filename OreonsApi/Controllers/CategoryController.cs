@@ -53,7 +53,7 @@ namespace OreonsApi.Controllers
         {
             var result = await _categoryManager.GetAllCategories();
 
-            return Ok(_mapper.Map<IEnumerable<CategoryDTO>>(result));
+            return Ok((result));
         }
 
         [HttpGet("{id}")]
