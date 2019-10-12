@@ -65,7 +65,7 @@ namespace OreonsApi.Controllers
         {
             var result = await _categoryManager.GetCategoryById(id);
 
-            return Ok(_mapper.Map<CategoryDTO>(result));
+            return Ok(result);
         }
 
         [HttpPut("update/{id}")]

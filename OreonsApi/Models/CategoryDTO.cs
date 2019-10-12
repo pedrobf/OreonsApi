@@ -6,8 +6,7 @@ namespace OreonsApi.Models
 {
     public class CategoryDTO
     {
-        //[Required(ErrorMessage = "Id é obrigatório")]
-        //public Guid? Id { get; set; }
+        public string SubCategoryId { get; set; }
 
         [Required(ErrorMessage = "Descrição é obrigatório")]
         [StringLength(70, MinimumLength = 1, ErrorMessage = "O campo Descrição deve conter no mínimo 1 e no máximo 70 caracteres.")]

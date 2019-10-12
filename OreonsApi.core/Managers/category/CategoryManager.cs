@@ -61,13 +61,36 @@ namespace OreonsApi.core.Managers.category
             {
                 Logger.LogInformation($"[{DateTime.Now:s}] - Updating Category with description [{category.Description}] and id [{category.Id}] to Oreons");
 
-                if (category.ChildrensCategory.Any() && category.ChildrensCategory.Count() > 0)
-                {
-                    await _dataBaseProvider.UpdateCategory(id, category.Description);
+                var returnSubCategory = (await GetCategoryById(id)).ChildrensCategory;
 
+                if (returnSubCategory.FirstOrDefault() == null)
+                {
                     foreach (var childrens in category.ChildrensCategory)
                     {
-                        await _dataBaseProvider.UpdateSubCategory(childrens.SubCategoryId, childrens.Description, childrens.Level);
+                        childrens.SubCategoryId = new Random().Next().ToString();
+                        childrens.CategoryId = id;
+
+                        await _dataBaseProvider.CreateSubCategory(childrens);
+                    }
+                }
+
+                if (returnSubCategory.Count() != category.ChildrensCategory.Count())
+                {
+                    for (var x = returnSubCategory.Count(); x < category.ChildrensCategory.Count(); x++)
+                    {
+                        category.ChildrensCategory[x].SubCategoryId = new Random().Next().ToString();
+                        category.ChildrensCategory[x].CategoryId = id;
+
+                        await _dataBaseProvider.CreateSubCategory(category.ChildrensCategory[x]);
+                    }
+                }
+                    
+
+                if (returnSubCategory.Count() == category.ChildrensCategory.Count())
+                {
+                    foreach (var childrens in category.ChildrensCategory)
+                    {
+                        await _dataBaseProvider.UpdateSubCategory(id, childrens.Description, childrens.Level);
                     }
                 }
                 else

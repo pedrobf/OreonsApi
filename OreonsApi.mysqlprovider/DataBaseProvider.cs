@@ -296,7 +296,7 @@ namespace OreonsApi.mysqlprovider
                     await conn.QueryAsync(
                         @"  UPDATE `subcategory` " +
                          "  SET `description` = @description " +
-                         "  WHERE id = @id " +
+                         "  WHERE id_category = @id " +
                          "  AND `level` = @level;",
                         new { description, id, level });
 
@@ -457,7 +457,7 @@ namespace OreonsApi.mysqlprovider
 
                     await conn.ExecuteAsync(
                             @"  DELETE FROM subcategory " +
-                             "  WHERE id = @id " +
+                             "  WHERE id_category = @id " +
                              "  AND level = @level; ",
                             new { id, level });
 
