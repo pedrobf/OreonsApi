@@ -1,9 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
+using OreonsApi.core.Managers.category;
 using OreonsApi.core.Models;
 using OreonsApi.core.Provider;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace OreonsApi.core.Managers.product
@@ -12,13 +14,15 @@ namespace OreonsApi.core.Managers.product
     {
         #region Objects
         private IDataBaseProvider _dataBaseProvider { get; set; }
+        private ICategoryManager _categoryManager { get; set; }
         private ILogger Logger { get; set; }
         #endregion
 
         #region Constructor
-        public ProductManager(IDataBaseProvider dataBaseProvider, ILoggerFactory logger)
+        public ProductManager(IDataBaseProvider dataBaseProvider, ICategoryManager categoryManager, ILoggerFactory logger)
         {
             _dataBaseProvider = dataBaseProvider;
+            _categoryManager = categoryManager;
             Logger = logger.CreateLogger("ProductsManager");
         }
         #endregion
@@ -31,6 +35,8 @@ namespace OreonsApi.core.Managers.product
 
                 if (product.CategoryId == null)
                     throw new ArgumentException("Categoria é obrigatório");
+
+                product.ChildrenCategoryId = (await _categoryManager.GetCategoryById(product.CategoryId)).ChildrensCategory.FirstOrDefault().SubCategoryId;
 
                 //if (!string.IsNullOrEmpty(product.Images.Name) && product.Images.Content != null)
                 //{

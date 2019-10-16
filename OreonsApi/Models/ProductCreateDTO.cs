@@ -19,7 +19,6 @@ namespace OreonsApi.Models
 
         [Required(ErrorMessage = "Id Categoria é obrigatório")]
         public string CategoryId { get; set; }
-        public string ChildrenCategoryId { get; set; }
         public ImageDTO Images { get; set; }
     }
 }
