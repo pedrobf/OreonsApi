@@ -45,7 +45,9 @@ CREATE TABLE IF NOT EXISTS `products` (
   `price` decimal(10,2) NOT NULL DEFAULT '0.00',
   `id_category` varchar(50) NOT NULL,
   `id_subcategory` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `FK1_id_category` (`id_category`),
+  CONSTRAINT `FK1_id_category` FOREIGN KEY (`id_category`) REFERENCES `category` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Exportação de dados foi desmarcado.
